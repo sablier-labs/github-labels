@@ -1,0 +1,28 @@
+#
+# Scope
+#
+#
+- name: "scope: backend"
+  color: "8735b1"
+  description: "Backend development task."
+- name: "scope: business"
+  color: "a28721"
+  description: "Business development task."
+- name: "scope: data"
+  color: "bb792f"
+  description: "Data engineering task."
+- name: "scope: evm"
+  color: "4673C9"
+  description: "EVM development task."
+- name: "scope: frontend"
+  color: "96faf2"
+  description: "Frontend development task."
+- name: "scope: marketing"
+  color: "fd747d"
+  description: "Marketing task."
+- name: "scope: other"
+  color: "cfd3d7"
+  description: "Task that doesn't fit in any other scope."
+- name: "scope: solana"
+  color: "30da93"
+  description: "Solana development task."
