@@ -1,15 +1,14 @@
 #
 # Scope
 #
-#
 - name: "scope: backend"
   color: "8735b1"
   description: "Backend development task."
 - name: "scope: business"
-  color: "a28721"
+  color: "285543"
   description: "Business development task."
 - name: "scope: data"
-  color: "bb792f"
+  color: "e1ec83"
   description: "Data engineering task."
 - name: "scope: evm"
   color: "4673C9"
@@ -17,6 +16,9 @@
 - name: "scope: frontend"
   color: "96faf2"
   description: "Frontend development task."
+- name: "scope: integrations"
+  color: "bb792f"
+  description: "Integration with a third-party service."
 - name: "scope: marketing"
   color: "fd747d"
   description: "Marketing task."
