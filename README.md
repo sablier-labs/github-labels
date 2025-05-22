@@ -27,7 +27,7 @@ $ ./apply.sh
 To apply the default labels to one particular repo:
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./default.yml sablier-labs/repo-name
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/repo-name
 ```
 
 Running these scripts will NOT overwrite any existing labels in the repo.
@@ -36,7 +36,7 @@ If you want to overwrite the labels, and also delete the labels that are not lis
 `--allow-added-labels` flag.
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --labels ./default.yml sablier-labs/repo-name
+github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yml sablier-labs/repo-name
 ```
 
 > [!WARNING]
