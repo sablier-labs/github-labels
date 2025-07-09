@@ -4,7 +4,8 @@ set shell := ["bash", "-euo", "pipefail", "-c"]
 #                                 DEPENDENCIES                                 #
 # ---------------------------------------------------------------------------- #
 
-# github-label-sync: https://github.com/Financial-Times/github-label-sync
+# https://github.com/Financial-Times/github-label-sync
+github-label-sync := require("github-label-sync")
 
 # ---------------------------------------------------------------------------- #
 #                                   CONSTANTS                                  #
