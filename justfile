@@ -77,7 +77,6 @@ apply-all-impl:
         "sablier-labs/branding"
         "sablier-labs/business-contracts"
         "sablier-labs/command-center"
-        "sablier-labs/deployments"
         "sablier-labs/docs"
         "sablier-labs/evm-examples"
         "sablier-labs/evm-token-list"
@@ -97,11 +96,12 @@ apply-all-impl:
         "sablier-labs/policies"
         "sablier-labs/sablier-labs.github.io"
         "sablier-labs/sandbox"
+        "sablier-labs/sdk"
         "sablier-labs/scripts"
         "sablier-labs/solsab"
         "sablier-labs/solana-indexers"
-        "sablier-labs/solsab-ui"
         "sablier-labs/solana-token-list"
+        "sablier-labs/solsab-ui"
         "sablier-labs/team-setup"
     )
 
