@@ -87,6 +87,8 @@ apply-all-impl:
         "sablier-labs/legacy-contracts"
         "sablier-labs/legacy-interfaces"
         "sablier-labs/legacy-subgraph"
+        "sablier-labs/github-labels"
+        "sablier-labs/github-searcher"
         "sablier-labs/lockup"
         "sablier-labs/lockup-integration-template"
         "sablier-labs/merkle-api"
