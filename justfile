@@ -1,4 +1,5 @@
 set shell := ["bash", "-euo", "pipefail", "-c"]
+set unstable
 
 # ---------------------------------------------------------------------------- #
 #                                 DEPENDENCIES                                 #
@@ -84,8 +85,8 @@ show-labels:
 
 # Apply default labels to all repositories
 [private]
+[script]
 apply-all-impl:
-    #!/usr/bin/env sh
     repos=(
         "sablier-labs/airdrops"
         "sablier-labs/benchmarks"
@@ -103,7 +104,8 @@ apply-all-impl:
         "sablier-labs/legacy-interfaces"
         "sablier-labs/legacy-subgraph"
         "sablier-labs/github-labels"
-        "sablier-labs/github-searcher"
+        "sablier-labs/gh-searcher"
+        "sablier-labs/investors"
         "sablier-labs/lockup"
         "sablier-labs/lockup-integration-template"
         "sablier-labs/merkle-api"
@@ -118,7 +120,6 @@ apply-all-impl:
         "sablier-labs/solsab"
         "sablier-labs/solana-indexers"
         "sablier-labs/solana-token-list"
-        "sablier-labs/solsab-ui"
         "sablier-labs/team-setup"
     )
 
