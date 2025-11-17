@@ -13,6 +13,7 @@ github-label-sync := require("github-label-sync")
 
 LABELS_DEFAULT := "./labels/default.yml"
 LABELS_COMMAND_CENTER := "./labels/command-center.yml"
+LABELS_MONOREPO := "./labels/monorepo.yml"
 GITHUB_TOKEN := env("GITHUB_TOKEN")
 
 # ---------------------------------------------------------------------------- #
@@ -52,10 +53,24 @@ apply-command-center:
         --labels {{ LABELS_COMMAND_CENTER }} \
         sablier-labs/command-center
 
+# Apply labels to the monorepo repository
+# TODO: rename `sablier-labs/lockup` to `sablier-labs/evm-monorepo`
+apply-monorepo:
+    github-label-sync \
+        --access-token {{ GITHUB_TOKEN }} \
+        --allow-added-labels \
+        --labels {{ LABELS_MONOREPO }} \
+        sablier-labs/lockup
+
 # Show command center labels
 show-command-center-labels:
     @echo "Command center labels configuration:"
     @cat {{ LABELS_COMMAND_CENTER }}
+
+# Show monorepo labels
+show-monorepo-labels:
+    @echo "Monorepo labels configuration:"
+    @cat {{ LABELS_MONOREPO }}
 
 # Show default labels
 show-labels:

@@ -1,0 +1,15 @@
+#
+# Protocol
+#
+- name: "protocol: airdrops"
+  color: "345907"
+  description: "Relevant to Airdrops protocol."
+- name: "protocol: flow"
+  color: "ac07fc"
+  description: "Relevant to Flow protocol."
+- name: "protocol: lockup"
+  color: "680ac5"
+  description: "Relevant to Lockup protocol."
+- name: "protocol: utils"
+  color: "e90c93"
+  description: "Relevant to EVM Utils protocol."
