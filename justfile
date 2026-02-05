@@ -12,6 +12,7 @@ github-label-sync := require("github-label-sync")
 #                                   CONSTANTS                                  #
 # ---------------------------------------------------------------------------- #
 
+ORG := "sablier-labs"
 LABELS_DEFAULT := "./labels/default.yml"
 LABELS_COMMAND_CENTER := "./labels/command-center.yml"
 LABELS_MONOREPO := "./labels/monorepo.yml"
@@ -36,7 +37,7 @@ apply-repo repo:
         --access-token {{ GITHUB_TOKEN }} \
         --allow-added-labels \
         --labels {{ LABELS_DEFAULT }} \
-        {{repo}}
+        {{ ORG }}/{{ repo }}
 
 # Apply default labels to a specific repository, overwriting existing labels
 [confirm("WARNING: This will delete any labels not listed in labels.yml! Continue? y/n")]
@@ -44,7 +45,7 @@ apply-repo-overwrite repo:
     github-label-sync \
         --access-token {{ GITHUB_TOKEN }} \
         --labels {{ LABELS_DEFAULT }} \
-        {{repo}}
+        {{ ORG }}/{{ repo }}
 
 # Apply labels to the command-center repository
 apply-command-center:
@@ -52,7 +53,7 @@ apply-command-center:
         --access-token {{ GITHUB_TOKEN }} \
         --allow-added-labels \
         --labels {{ LABELS_COMMAND_CENTER }} \
-        sablier-labs/command-center
+        {{ ORG }}/command-center
 
 # Apply labels to the monorepo repository
 # TODO: rename `sablier-labs/lockup` to `sablier-labs/evm-monorepo`
@@ -61,7 +62,7 @@ apply-monorepo:
         --access-token {{ GITHUB_TOKEN }} \
         --allow-added-labels \
         --labels {{ LABELS_MONOREPO }} \
-        sablier-labs/lockup
+        {{ ORG }}/lockup
 
 # Show command center labels
 show-command-center-labels:
@@ -88,46 +89,46 @@ show-labels:
 [script]
 apply-all-impl:
     repos=(
-        "sablier-labs/airdrops"
-        "sablier-labs/benchmarks"
-        "sablier-labs/branding"
-        "sablier-labs/business-contracts"
-        "sablier-labs/command-center"
-        "sablier-labs/docs"
-        "sablier-labs/evm-examples"
-        "sablier-labs/evm-token-list"
-        "sablier-labs/flow"
-        "sablier-labs/flow-integration-template"
-        "sablier-labs/indexers"
-        "sablier-labs/interfaces"
-        "sablier-labs/legacy-contracts"
-        "sablier-labs/legacy-interfaces"
-        "sablier-labs/legacy-subgraph"
-        "sablier-labs/github-labels"
-        "sablier-labs/gh-searcher"
-        "sablier-labs/investors"
-        "sablier-labs/lockup"
-        "sablier-labs/lockup-integration-template"
-        "sablier-labs/merkle-api"
-        "sablier-labs/multi-gitter-scripts"
-        "sablier-labs/multichain-deployer"
-        "sablier-labs/onchain-analytics"
-        "sablier-labs/policies"
-        "sablier-labs/sablier-labs.github.io"
-        "sablier-labs/sandbox"
-        "sablier-labs/sdk"
-        "sablier-labs/scripts"
-        "sablier-labs/solsab"
-        "sablier-labs/solana-indexers"
-        "sablier-labs/solana-token-list"
-        "sablier-labs/team-setup"
+        "airdrops"
+        "benchmarks"
+        "branding"
+        "business-contracts"
+        "command-center"
+        "docs"
+        "evm-examples"
+        "evm-token-list"
+        "flow"
+        "flow-integration-template"
+        "indexers"
+        "interfaces"
+        "legacy-contracts"
+        "legacy-interfaces"
+        "legacy-subgraph"
+        "github-labels"
+        "gh-searcher"
+        "investors"
+        "lockup"
+        "lockup-integration-template"
+        "merkle-api"
+        "multi-gitter-scripts"
+        "multichain-deployer"
+        "onchain-analytics"
+        "policies"
+        "sablier-labs.github.io"
+        "sandbox"
+        "sdk"
+        "scripts"
+        "solsab"
+        "solana-indexers"
+        "solana-token-list"
+        "team-setup"
     )
 
     for repo in "${repos[@]}"; do
-        echo "Syncing labels for $repo..."
+        echo "Syncing labels for {{ ORG }}/$repo..."
         github-label-sync \
             --access-token {{ GITHUB_TOKEN }} \
             --allow-added-labels \
             --labels {{ LABELS_DEFAULT }} \
-            "$repo"
+            "{{ ORG }}/$repo"
     done
